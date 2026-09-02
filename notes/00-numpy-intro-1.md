@@ -1,3 +1,7 @@
+---
+date: 2026-09-02
+time: "21:12:00+05:30"
+---
 # Numpy Introduction notes 
 
 > reference video -> https://youtu.be/Utgwk0r9Zq4 

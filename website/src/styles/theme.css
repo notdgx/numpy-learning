@@ -1,0 +1,57 @@
+:root {
+  /* Surface ladder */
+  --color-canvas: #050505;
+  --color-surface: #0a0a0a;
+  --color-surface-elevated: #101010;
+  --color-surface-card: #151515;
+  --color-button-fg: #18191a;
+
+  /* Hairlines / Borders */
+  --color-hairline: #262626;
+  --color-hairline-soft: rgba(255, 255, 255, 0.08);
+  --color-hairline-strong: rgba(255, 255, 255, 0.16);
+
+  /* Primary Action */
+  --color-primary: #ffffff;
+  --color-primary-pressed: #e8e8e8;
+  --color-on-primary: #000000;
+
+  /* Text hierarchy */
+  --color-ink: #f4f4f6;
+  --color-body: #d0d0d0;
+  --color-charcoal: #c2c2c2;
+  --color-mute: #9b9b9b;
+  --color-ash: #6f6f6f;
+  --color-stone: #4a4a4a;
+  --color-on-dark: #ffffff;
+  --color-on-dark-mute: rgba(255, 255, 255, 0.72);
+
+  /* Semantic Accents (for illustrations/tags) */
+  --color-accent-blue: #c9c9c9;
+  --color-accent-blue-soft: rgba(255, 255, 255, 0.08);
+  --color-accent-red: #bbbbbb;
+  --color-accent-red-soft: rgba(255, 255, 255, 0.08);
+  --color-accent-green: #d2d2d2;
+  --color-accent-green-soft: rgba(255, 255, 255, 0.08);
+  --color-accent-yellow: #dddddd;
+  --color-accent-yellow-soft: rgba(255, 255, 255, 0.08);
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Times NR MT', 'Times New Roman', Times, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Layout */
+  --navbar-height: 56px;
+  --max-content-width: 1240px;
+  --sidebar-width: 280px;
+  --toc-width: 240px;
+}

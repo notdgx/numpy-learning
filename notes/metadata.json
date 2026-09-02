@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-02T21:31:44+05:30",
+  "contentRoot": "notes",
+  "sections": {
+    "notes": {
+      "id": "notes",
+      "title": "NumPy Learning Notes",
+      "topics": [
+        {
+          "id": "64a3f18ab4fab299",
+          "title": "NumPy Fundamentals",
+          "order": 0,
+          "slug": "fundamentals",
+          "subtopics": [
+            {
+              "id": "a9a2d8b954b31dc2",
+              "title": "Overview & Core Mechanics",
+              "order": 0,
+              "slug": "overview",
+              "notes": [
+                {
+                  "id": "27a331e029299574",
+                  "title": "NumPy Intro 1",
+                  "route": "/notes/numpy-intro-1",
+                  "sourcePath": "notes/00-numpy-intro-1.md",
+                  "order": 0,
+                  "date": "2026-09-02",
+                  "time": "21:12:00+05:30",
+                  "headings": [
+                    {
+                      "id": "numpy-introduction-notes",
+                      "text": "Numpy Introduction notes",
+                      "level": 1
+                    },
+                    {
+                      "id": "keyterms",
+                      "text": "keyterms",
+                      "level": 2
+                    },
+                    {
+                      "id": "in-jupiter-keybindings",
+                      "text": "In jupiter keybindings",
+                      "level": 2
+                    },
+                    {
+                      "id": "esc-mode",
+                      "text": "Esc mode :",
+                      "level": 3
+                    },
+                    {
+                      "id": "enter-mode",
+                      "text": "Enter mode",
+                      "level": 3
+                    },
+                    {
+                      "id": "functions",
+                      "text": "Functions",
+                      "level": 1
+                    },
+                    {
+                      "id": "attribute",
+                      "text": "Attribute",
+                      "level": 1
+                    },
+                    {
+                      "id": "indexing",
+                      "text": "Indexing",
+                      "level": 1
+                    },
+                    {
+                      "id": "arthimetic-operations",
+                      "text": "ARthimetic Operations",
+                      "level": 1
+                    },
+                    {
+                      "id": "broadcasting",
+                      "text": "Broadcasting",
+                      "level": 1
+                    },
+                    {
+                      "id": "matrix-operaiton",
+                      "text": "Matrix operaiton",
+                      "level": 1
+                    },
+                    {
+                      "id": "stackinf-anf-splitting",
+                      "text": "Stackinf anf Splitting",
+                      "level": 1
+                    }
+                  ],
+                  "references": [],
+                  "sha256": "de4531b3793b0970fd3a1957120d24a69c549e838a559688586f4dfef53a6d5d",
+                  "sizeBytes": 3319,
+                  "practiceRoute": "/practice/numpy-1",
+                  "practiceTitle": "NumPy 1",
+                  "practiceSourcePath": "practice/00-numpy-1.ipynb",
+                  "practiceType": "ipynb"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "practice": {
+      "id": "practice",
+      "title": "NumPy Practice & Notebooks",
+      "items": [
+        {
+          "id": "a4351e45a6c3c252",
+          "title": "NumPy 1",
+          "route": "/practice/numpy-1",
+          "sourcePath": "practice/00-numpy-1.ipynb",
+          "order": 0,
+          "fileType": "ipynb",
+          "sha256": "93fbc24dbc42ebea3006567674464721f41b34793c3591da6ae4c9d190d1075e",
+          "sizeBytes": 50927,
+          "topicTitle": "NumPy Practice",
+          "subtopicTitle": "Hands-on Notebooks",
+          "topicSlug": "practice",
+          "subtopicSlug": "notebooks",
+          "noteRoute": "/notes/numpy-intro-1",
+          "noteTitle": "NumPy Intro 1",
+          "noteSourcePath": "notes/00-numpy-intro-1.md"
+        }
+      ]
+    }
+  },
+  "stats": {
+    "topics": 1,
+    "subtopics": 1,
+    "notes": 1,
+    "practiceItems": 1,
+    "referenceFiles": 0
+  }
+}

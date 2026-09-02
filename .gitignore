@@ -1,3 +1,30 @@
-.ipynb_checkpoints/
+# Windows metadata
 *:Zone.Identifier
+*Zone.Identifier
 
+# Dependencies & Package Managers
+node_modules/
+website/node_modules/
+
+# Build Outputs
+dist/
+website/dist/
+build/
+.vite/
+website/.vite/
+
+# Python & Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environment Variables & Local Overrides
+.env
+.env.local
+.env.*.local
+
+# IDE & Editors
+.vscode/
+
+# Temporary scratch folder
+tmp/
