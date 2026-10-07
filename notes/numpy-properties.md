@@ -607,3 +607,232 @@ View - > Slicing, reshape() , ravel()
 ------------
 ----
 
+# Dimensions
+
+### 0D — scalar
+
+```
+a = np.array(5)
+```
+
+```
+5
+```
+
+```
+ndim  = 0
+shape = ()
+size  = 1
+```
+
+- no axis 
+
+### 1D — vector
+
+```
+a = np.array([10, 20, 30, 40])
+```
+
+```
+[10 20 30 40]
+```
+
+```
+ndim  = 1
+shape = (4,)
+size  = 4
+```
+
+There is **one axis**:
+
+```
+        axis 0
+          ↓
+[10 20 30 40]
+```
+
+### 2D — matrix/table
+
+```
+a = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+```
+
+```
+       axis 1 →
+       0  1  2
+axis 0
+  ↓    1  2  3
+       4  5  6
+```
+```
+axis 0 ↓
+
+1 2 3
+4 5 6
+
+axis 1 →
+```
+
+```
+ndim  = 2
+shape = (2, 3)
+size  = 6
+```
+
+Meaning:
+
+```
+axis 0 → 2 elements
+axis 1 → 3 elements
+```
+
+So `(2, 3)` means:
+
+> 2 rows × 3 columns.
+
+
+---
+
+### 3D
+
+Example:
+
+```
+a = np.zeros((2, 3, 4))
+```
+
+Think of it as **2 matrices**, each `3 × 4`:
+
+```
+axis 0
+  ↓
+
+Layer 0:
+[ ][ ][ ][ ]
+[ ][ ][ ][ ]
+[ ][ ][ ][ ]
+
+Layer 1:
+[ ][ ][ ][ ]
+[ ][ ][ ][ ]
+[ ][ ][ ][ ]
+```
+
+```
+ndim  = 3
+shape = (2, 3, 4)
+size  = 2 × 3 × 4 = 24
+```
+
+Axes:
+
+```
+axis 0 → 2
+axis 1 → 3
+axis 2 → 4
+```
+
+---
+
+### 4D
+
+```
+a = np.zeros((2, 3, 4, 5))
+```
+
+Now:
+
+```
+ndim  = 4
+shape = (2, 3, 4, 5)
+size  = 120
+```
+
+You can think:
+
+```
+2 groups
+ └── each has 3 groups
+      └── each has 4 groups
+           └── each has 5 elements
+```
+
+The visualization becomes difficult, but the **mathematical concept is exactly the same**.
+
+
+----
+
+# Axis 
+
+- An axis is a **direction along which you can move/index**
+
+```
+shape       ndim       axes
+(5,)         1         axis 0
+(2,3)        2         axis 0, axis 1
+(2,3,4)      3         axis 0, axis 1, axis 2
+(2,3,4,5)    4         axis 0...axis 3
+```
+```
+axis 0 → first dimension
+axis 1 → second dimension
+axis 2 → third dimension
+axis 3 → fourth dimension
+```
+
+## 2D 
+
+```
+axis 0 ↓
+
+1 2 3
+4 5 6
+
+axis 1 →
+```
+
+## 3D
+
+```
+(2, 3, 4)
+ │  │  │
+ │  │  └─ axis 2 has 4
+ │  └──── axis 1 has 3
+ └─────── axis 0 has 2
+```
+
+## AXIS EMEMENTS 
+### 1D
+
+```
+[ elements ]
+```
+
+### 2D
+
+```
+[ [elements],
+  [elements] ]
+```
+
+### 3D
+
+```
+[
+  [ [elements],
+    [elements] ],
+
+  [ [elements],
+    [elements] ]
+]
+```
+
+### 4D
+
+Another layer around that.
+
+----
+- operation will be performes along where how the indexing of the elements are going on 
