@@ -359,14 +359,164 @@ hstack              → (2,6)
 ## split()
 
 - genral way of splitting along a axis 
+- divide into multiple subarrays along a existing axis
+- `np.split(array, indices_or_sections, axis=0)`
+- it doesnt return a one array it return a list on ndarrays 
+- ie python list of ndarrays
+- first arg is the array and second is no of section we want to split and third is the axis 
+- and the section shold be based on the sape size ie the each dim size should be divisibale by the section value 
+- by default axis is `0`
+- `axis` length must be divisible by `n`
+- for a uneven split or custom index split we pass index like `np.split(a, [2,5])`
+```
+index 0 → 1
+index 2 → 4
+index 5 → end
+```
+```
+[
+ [10,20],
+ [30,40,50],
+ [60,70]
+]
+
+
+[10 20 | 30 40 50 | 60 70]
+       2         5
+```
+- the index are exclusive 
+- it is smae for all the dims as it will give hte equalluy spaced divided list of nd arrays on which the split is applied 
+- if the index is zero then it retuns a empty array
+- repeated boundaries split it will create like 
+```
+[before 3]
+[]
+[after 3]
+```
+- Avoid duplicate split boundaries unless you intentionally want empty arrays.
+- If a split position goes beyond the array length, behavior is not the same as ordinary indexing; NumPy's split APIs have their own constraints and can reject invalid boundary specifications.
+```
+0 <= split_position <= axis_length
+```
+- ie it gives empty array 
+- split indexes can aslo be negatve 
+- the split doesnt modify the originla 
+- they return the `views` rather than orginal data copy 
+- this is to avoid extra memorywastage and be fast and more effcient 
+- it soesnt change the dtype 
+- it do gives the different shape obejct underlining the same sahred data 
+- it is used to create dataset batches liek 80 20 
+
+```
+800 rows
+100 rows
+100 rows
+```
+```
+train, validation, test = np.split(
+    data,
+    [800, 900],
+    axis=0
+)
+```
+```
+train.shape      = (800,20)
+validation.shape = (100,20)
+test.shape       = (100,20)
+```
 
 ## vsplit() 
 
 - splitting vertically
+- it is convinentfucntion 
+- `np.vsplit(a, sections)`
+- For a 2D array, vertical splitting means splitting **rows**. same as `np.split(a, n, axis=0)`
+- it can do the uneven scetions too ie list on indexes or equal scection
+```
+a = np.array([
+    [1,2],
+    [3,4],
+    [5,6],
+    [7,8]
+])
+```
+```
+[
+ [[1,2],
+  [3,4]],
 
+ [[5,6],
+  [7,8]]
+]
+```
+ - `vsplit()` is convenient splitting along axis 0.
+ - `vsplit()` is intended for arrays with at least two dimensions and will not generally work on a plain 1D array.
 ## hsplit()
 
 - splitting horizontally 
+- it is horizontal splitting ie the split horizontally 
+- For a normal 2D array, this means: colmns 
+- for the 2D it means `np.split(a, n, axis=1)`
+- it can work on 1D arrays aslo 
+
+```
+axis=1 if ndim > 1
+axis=0 if ndim == 1
+```
+
+- for multideimesion aray it will split thw 1st axis or onely 1 dim it will split to the 1d axis 
+
+```
+np.split()
+    ↓
+YOU specify the axis
+
+np.vsplit()
+    ↓
+axis 0
+
+np.hsplit()
+    ↓
+axis 1 for multidimensional arrays
+axis 0 for 1D
+```
+
+```
+parts
+ ↓
+[
+  ndarray,
+  ndarray,
+  ndarray
+]
+```
+
+
+
+|Property|`np.split()`|`np.vsplit()`|`np.hsplit()`|
+|---|---|---|---|
+|Purpose|General split|Vertical split|Horizontal split|
+|Axis|You specify|Axis 0|Axis 1 for ndim > 1|
+|1D support|Yes|No|Yes|
+|Return|List of arrays|List of arrays|List of arrays|
+|Equal sections|Yes, with integer|Yes, with integer|Yes, with integer|
+|Unequal sections|Use split indices|Use split indices|Use split indices|
+|Creates new dimension?|No|No|No|
+|Original modified?|No|No|No|
+|Can return views?|Yes|Yes|Yes|
+|dtype|Preserved|Preserved|Preserved|
+
+
+|Situation|`split`|`vsplit`|`hsplit`|
+|---|---|---|---|
+|1D array|✅|❌|✅|
+|2D array|✅|✅|✅|
+|3D array|✅|✅|✅|
+|Unequal sections|✅ indices|✅ indices|✅ indices|
+|Integer sections must divide axis evenly|✅|✅|✅|
+|Creates new axis|❌|❌|❌|
+|Returns list|✅|✅|✅|
+
 
 ----
 
