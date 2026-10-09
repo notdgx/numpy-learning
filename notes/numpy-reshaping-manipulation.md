@@ -233,6 +233,7 @@ np.concatenate((a, b), axis=1)
 ```
 
 - important rule : All dimensions except axis `k` must match. k may or may not match 
+- fro `axis=None → flatten-like concatenation`
 - 
 ## stack()
 
@@ -240,6 +241,7 @@ np.concatenate((a, b), axis=1)
 - it creates a new axis 
 - it place arrays along the axis the new one it creates 
 - two should be of same shape
+- it adds a new axis on ehre it is asked 
 
 ```
 original:       (2, 3)
@@ -270,7 +272,7 @@ axis=2:         (2, 3, 2)
 [4 5 6]  →  [4 5 6]
 ```
 
-
+- for 1D arrays it behavies like `np.stack((a, b), axis=0)`
 
 ## hstack()
 
@@ -282,6 +284,8 @@ vstack 1D → makes rows
 
 hstack 1D → extends the 1D array
 ```
+- for 1D it does like `np.concatenate((a, b), axis=0)`
+
 
 |Function|Requirement|
 |---|---|
@@ -290,7 +294,61 @@ hstack 1D → extends the 1D array
 |`vstack`|Vertical combination; 1D inputs are treated as rows|
 |`hstack`|Horizontal combination; behavior depends on dimensionality|
 
+```
+                    EXISTING AXIS     NEW AXIS
+                         │                │
+                         ▼                ▼
+	               concatenate          stack
+                         │                │
+                ┌────────┴───────┐        │
+                ▼                ▼        │
+             vstack            hstack     │
+             vertical         horizontal  │
+```
+```
+concatenate
+→ same number of dimensions
+→ one existing dimension gets bigger
 
+stack
+→ number of dimensions increases by 1
+→ new dimension has size = number of arrays
+
+vstack
+→ vertical arrangement
+
+hstack
+→ horizontal arrangement
+```
+
+```
+1D : 
+
+a = (3,)
+b = (3,)
+
+concatenate → (6,)
+stack       → (2,3)
+vstack      → (2,3)
+hstack      → (6,)
+```
+
+```
+2D : 
+
+a = (2,3)
+b = (2,3)
+
+concatenate axis=0 → (4,3)
+concatenate axis=1 → (2,6)
+
+stack axis=0        → (2,2,3)
+stack axis=1        → (2,2,3)
+stack axis=2        → (2,3,2)
+
+vstack              → (4,3)
+hstack              → (2,6)
+```
 ---
 ---
 
