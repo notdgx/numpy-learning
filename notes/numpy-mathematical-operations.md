@@ -9,6 +9,7 @@
 - np.min(), np.max(), np.argmin(), np.argmax()
 - np.abs(), np.sqrt(), np.exp(), np.log()
 - np.clip()
+
 ```
                     MATHEMATICAL OPERATIONS
                               │
@@ -602,17 +603,47 @@ A row →     [ 10   20 ]
 ---
 ---
 
-# np.sum(), np.mean(), np.std(), np.var()
+# np.sum(), np.mean(), np.std(), np.var(), axis parameter
 
 - they are reduction opetators they do many values to few values 
-- 
+- `axis` tells NumPy which dimension to collapse/reduce.
+- the one axis you specify it will reduce that one and the final answer will not have that dim 
+- sum it sum all eleemts 
+- mean gives mean, std -> standard deeviation and var gives variance 
+- withut axis or `axis = None` they gives all eleemts sum a scalr value 
+- `keepdims=True` it will tell it to dotn reduce the axis to 1 not just rremoving it 
+- even with axis none it gives the all ements oerational output and dim as `1,1,1` or whatever 
+- we can aslo reduce multiple axis like `axis=(0,2)`
+- mean here is arthemetic mean 
+- it can give and conver the value in float 64 
+- variance : `ddof` by default it is `0` it meand the divior by defalult zero means it will use the `N` if `ddof=1` the `N-1`
+```
+ddof=0 → divide by N
+ddof=1 → divide by N-1
+```
+- on booleand value sum counts the trues 
+- mean on boolean values give what faction is tue
+- empty arrays give zero no error 
+- axis must exist otherwise the axis error 
+- we can use negative axises
+- `-1` = last dim 
+- we can use `where= conditon` to do a conditional oepration
+```
+x = np.array([1, 2, 3, 4, 5])
 
-# axis parameter
+np.sum(x, where=x > 2)
+```
+- also `out=result` it cna send teh answer to resulat and result can recieve it 
+- aslo sum supports `initial=10` vallue to start the sum forom default is `0`
+- `ddof` is for he std and var both 
+- they all give a new array no view ans it is computed 
+
 
 - it helps to instruct where and along how we have to perform the operation 
 - `axis` tells NumPy which dimension is being collapsed/reduced.
-- 
 
+---
+---
 
 # np.min(), np.max(), np.argmin(), np.argmax()
 
